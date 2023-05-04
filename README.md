@@ -7,7 +7,7 @@ Nowadays, finding vacant parking spaces in urban areas has become a problem. Dri
 pip install -r requirements.txt
 ```
 #### Set Parking Spaces
-```
+```{r, engine='sh', count_lines}
 python occupancy_detection/set_parking_spaces.py --output_path PATH_OF_OUTPUT_FILE(optional) PATH_OF_VIDEO_FILE
 ```
 #### Detect
