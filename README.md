@@ -19,4 +19,4 @@ python occupancy_detection/set_parking_spaces.py PATH_OF_VIDEO_FILE --output_pat
 #### Detect
 ```
 python occupancy_detection/detect.py PATH_OF_VIDEO_FILE PATH_OF_PARKING_REGIONS_FILE --output_path PATH_OF_OUTPUT_FILE(optional)
-```
+``` 
