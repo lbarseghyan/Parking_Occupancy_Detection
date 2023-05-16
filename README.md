@@ -14,9 +14,9 @@ pip install -r requirements.txt
 ```
 #### Set Parking Spaces
 ```
-python occupancy_detection/set_parking_spaces.py PATH_OF_VIDEO_FILE --output_path PATH_OF_OUTPUT_FILE(optional) 
+python occupancy_detection/set_parking_spaces.py <PATH_OF_VIDEO_FILE> --output_path <PATH_OF_OUTPUT_FILE(optional)> 
 ```
 #### Detect
 ```
-python occupancy_detection/detect.py PATH_OF_VIDEO_FILE PATH_OF_PARKING_REGIONS_FILE --output_path PATH_OF_OUTPUT_FILE(optional)
+python occupancy_detection/detect.py <PATH_OF_VIDEO_FILE> <PATH_OF_PARKING_REGIONS_FILE> --output_path <PATH_OF_OUTPUT_FILE(optional)>
 ``` 
