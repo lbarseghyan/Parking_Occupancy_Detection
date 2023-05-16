@@ -52,9 +52,9 @@ class ParkingOccupancyDetection:
         output = cv2.VideoWriter(output_path, output_fourcc, output_fps, video_size)
 
         count = 0
-        detect_start = time.time()
+        t = 0
+        frame_start = time.time()       
         while cap.isOpened():
-            frame_start = time.time()
             success, frame = cap.read()
             if not success:
                 break
@@ -66,13 +66,17 @@ class ParkingOccupancyDetection:
 
             cv2.imshow('Parking Occupancy Detection', frame_detected)
             output.write(frame_detected)
+            
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-
-            frame_end = time.time()
-            time.sleep((1/output_fps) - (frame_end-frame_start))
-        detect_end = time.time()
-        print('Detection time: ' + str(detect_end-detect_start))
+                
+            if (1/output_fps) - (time.time()-frame_start + t) < 0:        
+                t += (1/output_fps) - (time.time()-frame_start)
+                frame_start = time.time()
+            else:
+                time.sleep((1/output_fps) - (time.time()-frame_start) + t)
+                frame_start = time.time()
+                t = 0      
 
         cap.release()
         output.release()
